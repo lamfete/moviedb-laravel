@@ -67,6 +67,11 @@ class MovieController extends Controller
     * @param int $id
     * @return Response
     */
+    public function edit($id)
+    {
+      $movie = Movie::find($id);
+      return view('movies.edit', compact('movie'));
+    }
 
     /**
     * Update the specified resource in storage.
@@ -77,6 +82,10 @@ class MovieController extends Controller
     public function update($id)
     {
       //
+      $movieUpdate = Request::all();
+      $movie = Movie::find($id);
+      $movie->update($movieUpdate);
+      return redirect('movies');
     }
 
     /**
