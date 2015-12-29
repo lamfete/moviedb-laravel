@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+
+use Request;
 
 use App\Movie;
 use App\Http\Requests;
@@ -30,6 +32,7 @@ class MovieController extends Controller
     public function create()
     {
       //
+      return view('movies.create');
     }
 
     /**
@@ -40,6 +43,9 @@ class MovieController extends Controller
     public function store()
     {
       //
+      $movie = Request::all();
+      Movie::create($movie);
+      return redirect('movies');
     }
 
     /**

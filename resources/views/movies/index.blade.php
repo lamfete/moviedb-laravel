@@ -9,7 +9,6 @@
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr class="bg-info">
-      <th>ID</th>
       <th>Title</th>
       <th>IMDB Rating</th>
       <th>Release</th>
@@ -20,7 +19,6 @@
   <tbody>
     @foreach($movies as $movie)
       <tr>
-        <td>{{ $movie->id }}</td>
         <td>{{ $movie->title }}</td>
         <td>{{ $movie->rating }}</td>
         <td>{{ date('d-m-Y', strtotime($movie->release)) }}</td>
